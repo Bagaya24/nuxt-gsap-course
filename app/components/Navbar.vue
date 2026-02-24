@@ -9,7 +9,7 @@
         </div>
         <ul>
             <li v-for="link in navLinks" :key="link.id">
-                <NuxtLink :to="link.id">{{ link.title }}</NuxtLink>
+                <a :href="`#${link.id}`">{{ link.title }}</a>
             </li>
         </ul>
     </nav>
