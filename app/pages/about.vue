@@ -65,8 +65,10 @@
     import { SplitText } from 'gsap/SplitText';
 
     const main = ref(null);
+    let ctx;
     onMounted(() => {
-        const titleSplit = SplitText.create('#about h2', { type: 'words' });
+        ctx = gsap.context(() => {
+const titleSplit = SplitText.create('#about h2', { type: 'words' });
 
         const scrollTimeline = gsap.timeline({
             scrollTrigger: {
@@ -88,5 +90,11 @@
             ease: "power1.inOut",
             stagger: 0.04, 
         }, '-=0.5');
+        }, main.value);
+        
+    });
+
+    onUnmounted(() => {
+        if (ctx) ctx.revert();
     })
 </script>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import About from './about.vue';
-import Cocktails from './cocktails.vue';
+import Cocktails from './Cocktails.vue';
 
 </script>
 
@@ -9,6 +9,7 @@ import Cocktails from './cocktails.vue';
         <HomeHero/>
         <Cocktails/>
         <About/>
+        <HomeArt/>
     </main>
    
 </template>
