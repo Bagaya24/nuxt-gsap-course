@@ -1,9 +1,12 @@
+<script setup lang="ts">
+import Cocktails from './cocktails.vue';
+
+</script>
+
 <template>
     <main>
         <HomeHero/>
-        <div class="h-dvh bg-black">
-
-        </div>
+        <Cocktails/>
     </main>
    
 </template>

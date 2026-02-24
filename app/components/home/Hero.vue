@@ -122,7 +122,8 @@ onMounted(() => {
       } else {
         videoRef.value.onloadedmetadata = initTimeLine;
       }
-    }
+    };
+    
   }, main.value);
 });
 
