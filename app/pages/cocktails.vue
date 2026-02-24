@@ -37,9 +37,11 @@
 import gsap from 'gsap'
 
 const cocktails = ref();
+let ctx;
 
 onMounted(() => {
-    const parallaxTimeline = gsap.timeline({
+    ctx = gsap.context(() => {
+const parallaxTimeline = gsap.timeline({
         scrollTrigger: {
             trigger: cocktails.value,
             start: 'top 30%',
@@ -49,5 +51,11 @@ onMounted(() => {
     });
     parallaxTimeline.from('#c-left-leaf', { y: 100, x: -150 })
                     .from('#c-right-leaf', { y: 100, x: 150 }, '-=1');
+    }, cocktails.value);
+    
+})
+
+onUnmounted(() => {
+    if(ctx) ctx.revert();
 })
 </script>
