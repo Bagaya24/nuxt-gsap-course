@@ -77,7 +77,7 @@ onMounted(() => {
     })
     .to('.masked-img', {
         scale: 1.3,
-        maskPosition: 'center', maskSize: '400%', duration: 1, ease: "power1.inOut"
+        maskPosition: 'center', maskSize: '400%', duration: 2, ease: "power1.inOut"
     })
     .to('.masked-conten', {
         opacity: 1, duration: 1, ease: "power1.inOut"
