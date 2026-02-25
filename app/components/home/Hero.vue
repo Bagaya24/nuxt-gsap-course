@@ -1,44 +1,43 @@
 <template>
-  <div ref="main">
-    <section id="hero" class="noisy">
-      <h1 class="title">Mojito</h1>
-      <img src="/images/hero-left-leaf.png" alt="Left Leaf" class="left-leaf" />
-      <img
-        src="/images/hero-right-leaf.png"
-        alt="Right Leaf"
-        class="right-leaf"
-      />
+  <section id="hero" class="noisy" ref="main">
+    <h1 class="title">Mojito</h1>
+    <img src="/images/hero-left-leaf.png" alt="Left Leaf" class="left-leaf" />
+    <img
+      src="/images/hero-right-leaf.png"
+      alt="Right Leaf"
+      class="right-leaf"
+    />
 
-      <div class="body">
-        <div class="content">
-          <div class="hidden space-y-5 md:block">
-            <p>Cool. Crisp. Classic</p>
-            <p class="subtitle">
-              Sip the spirit <br />
-              of summer
-            </p>
-          </div>
-          <div class="view-cocktails">
-            <p class="subtitle">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-              excepturi, adipisci ducimus veniam necessitatibus alias possimus
-              ut totam earum fugiat. Nostrum aperiam nihil veniam quam quasi,
-              animi quisquam voluptatum alias.
-            </p>
-            <NuxtLink to="/cocktails"> View Cocktails </NuxtLink>
-          </div>
+    <div class="body">
+      <div class="content">
+        <div class="hidden space-y-5 md:block">
+          <p>Cool. Crisp. Classic</p>
+          <p class="subtitle">
+            Sip the spirit <br />
+            of summer
+          </p>
+        </div>
+        <div class="view-cocktails">
+          <p class="subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+            excepturi, adipisci ducimus veniam necessitatibus alias possimus ut
+            totam earum fugiat. Nostrum aperiam nihil veniam quam quasi, animi
+            quisquam voluptatum alias.
+          </p>
+          <NuxtLink to="/cocktails"> View Cocktails </NuxtLink>
         </div>
       </div>
-    </section>
-    <div class="video absolute inset-0">
-      <video
-        src="/videos/output.mp4"
-        muted
-        playsinline
-        preload="auto"
-        ref="videoRef"
-      />
     </div>
+  </section>
+
+  <div class="video absolute inset-0">
+    <video
+      src="/videos/output.mp4"
+      muted
+      playsinline
+      preload="auto"
+      ref="videoRef"
+    />
   </div>
 </template>
 
@@ -76,7 +75,7 @@ onMounted(() => {
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: "#hero",
+          trigger: main.value,
           start: "top top",
           end: "bottom top",
           scrub: true,
@@ -122,8 +121,7 @@ onMounted(() => {
       } else {
         videoRef.value.onloadedmetadata = initTimeLine;
       }
-    };
-    
+    }
   }, main.value);
 });
 

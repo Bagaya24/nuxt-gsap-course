@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import About from './about.vue';
-import Cocktails from './Cocktails.vue';
+import Cocktails from './cocktails.vue';
 import Contact from './contact.vue';
 
 </script>
